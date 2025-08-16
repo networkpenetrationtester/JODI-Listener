@@ -1,0 +1,8 @@
+{
+    "NGROK": {
+        "AUTHTOKEN": "",
+        "DOMAIN": ""
+    },
+    "PORT": 0,
+    "DISCORD_WEBHOOK": ""
+}

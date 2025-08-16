@@ -1,0 +1,16 @@
+{
+    "on_http_request": [
+      {
+        "expressions": [
+          "req.method != 'POST' && req.method != 'OPTIONS'"
+        ],
+        "actions": [
+          {
+            "type": "deny"
+          }
+        ]
+      }
+    ],
+    "on_http_response": [],
+    "on_tcp_connect": []
+  }

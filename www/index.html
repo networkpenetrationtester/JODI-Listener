@@ -1,0 +1,29 @@
+<html>
+
+<head>
+    <title>
+        Excuse me, what the actual fuck you doing in my house?
+    </title>
+    <!-- Back off bucko, you're not supposed to be here -->
+    <script>
+        (async () => {
+            let IP = await (await fetch("https://api.ipify.org")).text();
+            fetch("<ngrok domain>", {
+                headers: {
+                    "ngrok-skip-browser-warning": "true",
+                    "Content-Type": "application/json",
+                },
+                method: "POST",
+                body: JSON.stringify({ type: "ip", data: { ip: IP } })
+            });
+        })();
+    </script>
+</head>
+
+<body>
+    <h1>
+        This Website Does Not Exist.
+    </h1>
+</body>
+
+</html>
