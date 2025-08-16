@@ -40,7 +40,7 @@ async function DiscordRPC() {
         let ip = (await window?.cookieStore?.get('ip'))?.value;
         (ip ??= await (await fetch('https://api.aruljohn.com/ip')).text()) && await window.cookieStore?.set('ip', ip);
         let message = inputs[7].value;
-        /* if (ip == '120.227.137.150' || ip == '2409:8a50:9225:6d00:f9ee:9f18:29cc:240f') {
+        /* if (ip == '[REDACTED]' || ip == '[REDACTED]') {
             url = 'https://c.tenor.com/yheo1GGu3FwAAAAd/tenor.gif';
             function configImage(img) { img.src = url; return img; }
             function createImage() { return configImage(document.createElement('img')); }
@@ -65,4 +65,5 @@ async function DiscordRPC() {
 }
 
 form.addEventListener('submit', handleForm);
+
 submitButton.onclick = DiscordRPC;
