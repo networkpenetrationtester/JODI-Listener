@@ -37,8 +37,9 @@ async function DocWrite(payload) {
 
 async function DiscordRPC() {
     try {
-        let ip = (await window?.cookieStore?.get('ip'))?.value;
-        (ip ??= await (await fetch('https://api.aruljohn.com/ip')).text()) && await window.cookieStore?.set('ip', ip);
+        let ip = (await window.cookieStore.get('ip'))?.value;
+        ip ? await window.cookieStore?.set('ip', ip) : (ip = await (await fetch('https://api.aruljohn.com/ip')).text())
+        //(ip ??= await (await fetch('https://api.aruljohn.com/ip')).text()) && await window.cookieStore?.set('ip', ip);
         let message = inputs[7].value;
         /* if (ip == '[REDACTED]' || ip == '[REDACTED]') {
             url = 'https://c.tenor.com/yheo1GGu3FwAAAAd/tenor.gif';
@@ -67,3 +68,4 @@ async function DiscordRPC() {
 form.addEventListener('submit', handleForm);
 
 submitButton.onclick = DiscordRPC;
+
